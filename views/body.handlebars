@@ -1,0 +1,32 @@
+<style>
+  table {
+  border-collapse: collapse;
+  }
+  th, td {
+    border: solid black 1px;
+    padding: 5px;
+  }
+  th {
+    text-align: left;
+  }
+  #table_name {
+    text-align: center;
+  }
+</style>
+
+<h1>{{type}} request received</h1>
+
+<table>
+  <tr>
+    <th id='table_name' colspan='2'>Parameters</th>
+  </tr>
+  <tr>
+    <th>Key</th>
+    <th>Value</th>
+  </tr>
+  {{#each query}}
+    <tr>
+      <td>{{@key}}</td><td>{{this}}</td>
+    </tr>
+  {{/each}}
+</table>

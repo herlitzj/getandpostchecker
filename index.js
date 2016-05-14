@@ -7,11 +7,11 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 
 app.get('/', function (req, res) {
-  res.render('get');
+  res.render('body', getPayload('GET', req));
 });
 
 app.post('/', function (req, res) {
-  res.render('post');
+  res.render('body', getPayload('POST', req));
 });
 
 app.use(function (err, req, res, next) {
@@ -25,3 +25,11 @@ app.use(function (req, res) {
 app.listen(port, function () {
   console.log('App listening on port ' + port + '!');
 });
+
+
+function getPayload(type, input){
+  var payload = {};
+  payload.type = type;
+  payload.query = input.query;
+  return payload;
+}
