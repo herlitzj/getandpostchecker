@@ -1,0 +1,23 @@
+{
+  "name": "getandpostchecker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/herlitzj/getandpostchecker.git"
+  },
+  "author": "Jeff Herlitz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/herlitzj/getandpostchecker/issues"
+  },
+  "homepage": "https://github.com/herlitzj/getandpostchecker#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "forever": "^0.15.1"
+  }
+}
