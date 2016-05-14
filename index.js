@@ -1,13 +1,17 @@
 var express = require('express');
 var app = express();
+var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 var port = process.env.PORT || 3000;
 
+app.engine('handlebars', handlebars.engine);
+app.set('view engine', 'handlebars');
+
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  res.render('get');
 });
 
 app.post('/', function (req, res) {
-  res.send('Hello POST!');
+  res.render('post');
 });
 
 app.use(function (err, req, res, next) {
@@ -19,5 +23,5 @@ app.use(function (req, res) {
 })
 
 app.listen(port, function () {
-  console.log('Example app listening on port ' + port + '!');
+  console.log('App listening on port ' + port + '!');
 });
